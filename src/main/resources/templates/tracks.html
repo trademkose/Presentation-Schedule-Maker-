@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<head> 
+    <title>Getting Started: Handling Form Submission</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<h1>Tracks</h1>   
+    
+    <table>
+    <thead>
+        <tr> 
+        <th> Time </th>
+            <th> Name </th>
+            <th> Minute </th>
+        </tr>
+    </thead>
+    <tbody>
+	<tr th:if="${tracks_list.empty}">
+            <td colspan="2"> There is no tracks. Please Go back to main page to add presentation. </td>
+        </tr>
+        <tr th:each="tracks_list : ${tracks_list}">
+            <td><span th:text="${tracks_list.time}"> Time </span></td>
+            <td><span th:text="${tracks_list.name}"> Name </span></td>
+            <td><span th:text="${tracks_list.minute}"> Minute </span></td>
+        </tr>
+    </tbody>
+</table>
+     <br></br>
+    <br></br>
+    <a href="/presentation">GO BACK MAIN PAGE</a>
+</body>
+</html>

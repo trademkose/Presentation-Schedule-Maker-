@@ -1,0 +1,23 @@
+package com.ademkose.casesolving.repository;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
+
+import com.ademkose.casesolving.model.Presentation;
+
+@Repository
+public interface PresentationRepository extends CrudRepository<Presentation, Long> {
+
+	Presentation findByName(String name);
+
+	List<Presentation> findAll();	 
+	
+	Optional<Presentation> findById(Long Id);
+	
+
+	
+
+}

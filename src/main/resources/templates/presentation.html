@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<head> 
+    <title>Add a new presentation!</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+
+	<h1>Input Presentation</h1>
+    <form action="#" th:action="@{/presentation}" th:object="${presentation}" method="post">
+       <p> <a th:href="@{/load_test_data}">Load Test Data... </a></p>
+    	<p>Name     : <input type="text" th:field="*{name}" /></p>
+        <p>Minute: <input type="text" th:field="*{minute}" /></p>        
+        <p><input type="submit" value="Add this presentation" /> </p>
+       <p> <a th:href="@{/tracks}">View The Tracks (RESULT)... </a></p>
+    </form>
+    
+    <div class="alert alert-primary" role="alert" th:text="${success}" th:if="${success} "></div>
+<div class="alert alert-danger" role="alert" th:text="${error}" th:if="${error}"></div>
+
+
+ <table>
+    <thead>
+        <tr>
+            <th> Name </th>
+            <th> Minute </th>
+        </tr>
+    </thead>
+    <tbody>
+	<tr th:if="${presentation_list.empty}">
+            <td colspan="2"> There is no presentation. Please add presentation. </td>
+        </tr>
+        <tr th:each="presentation_list : ${presentation_list}">
+            <td><span th:text="${presentation_list.name}"> Name </span></td>
+            <td><span th:text="${presentation_list.minute}"> Minute </span></td>
+    </tr>
+    </tbody>
+</table>
+     <br></br>
+    
+    
+</body>
+</html>
