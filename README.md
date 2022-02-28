@@ -1,5 +1,4 @@
-# ademkose_case_solving
-ademkose_case_solving
+# This repo is created to make a custom presentaion schedule. When you want to make a schedule with your registered prenstation as daily. This app can help you to create daily schedule and it can handle start date, end date, lunch break etc.
 
 #application.properties
 - This application is going to start on 8080 default port.
